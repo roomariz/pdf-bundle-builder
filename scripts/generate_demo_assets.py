@@ -11,7 +11,6 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from PyPDF2 import PdfReader
 
-
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SRC_ROOT = REPO_ROOT / "src"
 SAMPLE_INPUT = REPO_ROOT / "sample-input"
@@ -287,14 +286,15 @@ def _capture_gui() -> bool:
 
     try:
         from PIL import ImageGrab
-        from pdf_merger.app import PDFMergerApp
+
+        from pdf_merger.app import PDFBundleBuilderApp
     except Exception as error:
         print(f"Skipping GUI screenshot: GUI dependencies are unavailable ({error}).")
         return False
 
     app = None
     try:
-        app = PDFMergerApp()
+        app = PDFBundleBuilderApp()
         app.input_folder = SAMPLE_INPUT
         app.folder_label.configure(text=f"Input folder: {SAMPLE_INPUT}")
         app.load_pdf_list()

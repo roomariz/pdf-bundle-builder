@@ -1,12 +1,10 @@
-from datetime import datetime
-from pathlib import Path
 import re
-from typing import Callable
-from typing import Mapping
-
-from PyPDF2 import PdfMerger
-from PyPDF2 import PdfReader
+from datetime import datetime
 from io import BytesIO
+from pathlib import Path
+from typing import Callable, Mapping
+
+from PyPDF2 import PdfMerger, PdfReader
 
 from pdf_merger.design import create_section_pdf, create_toc_pdf
 

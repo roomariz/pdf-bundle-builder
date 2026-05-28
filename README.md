@@ -2,6 +2,10 @@
 
 Privacy-first offline PDF evidence bundle builder with TOC, dividers, and page numbers (desktop app + CLI).
 
+[![CI](https://github.com/roomariz/pdf-bundle-builder/actions/workflows/ci.yml/badge.svg)](https://github.com/roomariz/pdf-bundle-builder/actions/workflows/ci.yml)
+[![Latest Release](https://img.shields.io/github/v/release/roomariz/pdf-bundle-builder)](https://github.com/roomariz/pdf-bundle-builder/releases/latest)
+[![License](https://img.shields.io/github/license/roomariz/pdf-bundle-builder)](LICENSE)
+
 - **Download Windows App:** [GitHub Releases](https://github.com/roomariz/pdf-bundle-builder/releases/latest) (`pdf-bundle-builder-windows.zip`)
 - **View sample output:** [`docs/demo-output/sample_bundle.pdf`](docs/demo-output/sample_bundle.pdf)
 - **Run with uv:** jump to [Installation](#installation)

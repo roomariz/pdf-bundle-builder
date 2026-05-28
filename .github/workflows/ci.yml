@@ -13,7 +13,8 @@ jobs:
       - name: Set up Python
         run: uv python install 3.12
       - name: Install dependencies
-        run: uv sync
-      - name: Syntax check
-        run: uv run python -m py_compile src/pdf_merger/*.py
-
+        run: uv sync --extra dev
+      - name: Ruff
+        run: uv run ruff check .
+      - name: Tests
+        run: uv run pytest

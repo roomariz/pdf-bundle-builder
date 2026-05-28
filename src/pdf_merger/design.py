@@ -1,12 +1,10 @@
 from io import BytesIO
 from pathlib import Path
-from typing import Callable
-from typing import Mapping
+from typing import Callable, Mapping
 
 from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import A4
 from reportlab.pdfgen import canvas
-
 
 WHITE = HexColor("#FFFFFF")
 DARK = HexColor("#1E1E1E")

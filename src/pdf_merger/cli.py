@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 from pdf_merger.merge_pdfs import merge_pdfs
 
@@ -61,12 +61,17 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     if args.command == "merge":
-        merged = merge_pdfs(
-            input_dir=args.input,
-            output_file=args.output,
-            include_toc=not args.no_toc,
-            include_dividers=not args.no_dividers,
-        )
+        try:
+            merged = merge_pdfs(
+                input_dir=args.input,
+                output_file=args.output,
+                include_toc=not args.no_toc,
+                include_dividers=not args.no_dividers,
+            )
+        except Exception as error:  # noqa: BLE001
+            print(f"Error: {error}", file=sys.stderr)
+            return 1
+
         if args.open:
             _open_file(merged)
         return 0
@@ -77,4 +82,3 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
