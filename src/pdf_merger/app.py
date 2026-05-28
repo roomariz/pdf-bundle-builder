@@ -198,7 +198,8 @@ class PDFMergerApp(ctk.CTk):
                     )
                 except Exception as error:  # noqa: BLE001
                     self._progress_queue.put(f"Error: {error}")
-                    self.after(0, lambda: messagebox.showerror("Error", str(error)))
+                    error_message = str(error)
+                    self.after(0, lambda: messagebox.showerror("Error", error_message))
                     return
 
                 self._progress_queue.put("Done.")
