@@ -17,18 +17,16 @@ Typical use cases include immigration, citizenship, legal evidence bundles, univ
 
 Demo assets are generated only from the safe sample PDFs in `sample-input/`.
 
-![Desktop app placeholder](docs/screenshots/app.png)
-![Generated Table of Contents placeholder](docs/screenshots/toc.png)
-![Section divider placeholder](docs/screenshots/divider.png)
-
-[Demo GIF placeholder](docs/demo.gif)
+![Desktop app screenshot](docs/screenshots/app.png)
+![Generated Table of Contents screenshot](docs/screenshots/toc.png)
+![Section divider screenshot](docs/screenshots/divider.png)
 
 Recommended screenshots:
 
 * Desktop app with selected PDF list
 * Generated Table of Contents
 * Section divider page
-* Short GIF showing folder selection → merge → output PDF
+* Short GIF showing folder selection, merge, and output PDF
 
 Generate demo assets:
 
@@ -207,7 +205,7 @@ docs/release-checklist.md
 
 ## Roadmap
 
-* Add screenshots and demo GIF
+* Add demo GIF
 * Add Windows release smoke test
 * Add macOS and Linux executable builds
 * Add optional per-entry PDF page counts in the Table of Contents
