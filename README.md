@@ -15,14 +15,13 @@ Typical use cases include immigration, citizenship, legal evidence bundles, univ
 
 ## Screenshots
 
-Add screenshots before public launch:
+Demo assets are generated only from the safe sample PDFs in `sample-input/`.
 
-```text
-docs/screenshots/app.png
-docs/screenshots/toc.png
-docs/screenshots/divider.png
-docs/demo.gif
-````
+![Desktop app placeholder](docs/screenshots/app.png)
+![Generated Table of Contents placeholder](docs/screenshots/toc.png)
+![Section divider placeholder](docs/screenshots/divider.png)
+
+[Demo GIF placeholder](docs/demo.gif)
 
 Recommended screenshots:
 
@@ -30,6 +29,12 @@ Recommended screenshots:
 * Generated Table of Contents
 * Section divider page
 * Short GIF showing folder selection → merge → output PDF
+
+Generate demo assets:
+
+```powershell
+uv run python scripts/generate_demo_assets.py
+```
 
 ## How It Works
 

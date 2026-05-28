@@ -8,6 +8,8 @@ wheels/
 
 # Virtual environments
 .venv/
+.venv-win/
+.venv-wsl/
 
 # Local app data and private documents
 input/
@@ -17,3 +19,10 @@ output/
 # Safe demo PDFs only
 !sample-input/
 !sample-input/*.pdf
+!docs/demo-output/
+!docs/demo-output/sample_bundle.pdf
+
+# Public demo assets
+!docs/screenshots/
+!docs/screenshots/*.png
+!docs/demo.gif
