@@ -4,18 +4,16 @@ __pycache__/
 build/
 dist/
 wheels/
-*.egg-info
+*.egg-info/
 
 # Virtual environments
 .venv/
 
-# Bytecode
-*.pyc
-
-# Local app data (privacy)
+# Local app data and private documents
 input/
 output/
 *.pdf
 
-# Safe demo PDFs (tracked)
+# Safe demo PDFs only
+!sample-input/
 !sample-input/*.pdf
