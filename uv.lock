@@ -190,7 +190,7 @@ wheels = [
 ]
 
 [[package]]
-name = "pdf-merger"
+name = "pdf-bundle-builder"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [

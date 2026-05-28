@@ -1,6 +1,12 @@
 # PDF Bundle Builder
 
-Privacy-first offline desktop and CLI tool for creating professional merged PDF evidence bundles.
+Privacy-first offline PDF evidence bundle builder with TOC, dividers, and page numbers (desktop app + CLI).
+
+- **Download Windows App:** [GitHub Releases](https://github.com/roomariz/pdf-bundle-builder/releases/latest) (`pdf-bundle-builder-windows.zip`)
+- **View sample output:** [`docs/demo-output/sample_bundle.pdf`](docs/demo-output/sample_bundle.pdf)
+- **Run with uv:** jump to [Installation](#installation)
+
+![Desktop app screenshot](docs/screenshots/app.png)
 
 It creates a single polished PDF bundle with:
 
@@ -17,7 +23,6 @@ Typical use cases include immigration, citizenship, legal evidence bundles, univ
 
 Demo assets are generated only from the safe sample PDFs in `sample-input/`.
 
-![Desktop app screenshot](docs/screenshots/app.png)
 ![Generated Table of Contents screenshot](docs/screenshots/toc.png)
 ![Section divider screenshot](docs/screenshots/divider.png)
 

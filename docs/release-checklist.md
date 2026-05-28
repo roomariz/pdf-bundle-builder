@@ -11,6 +11,13 @@ uv sync --extra dev
 uv run pytest
 ```
 
+1b. Update GitHub sidebar metadata (manual):
+
+- Description:
+  - Privacy-first offline PDF evidence bundle builder with TOC, dividers, page numbers, CLI and desktop app.
+- Topics:
+  - pdf, python, desktop-app, customtkinter, reportlab, legal-tech, privacy, offline, productivity, immigration, evidence, pdf-merger
+
 2. Sanity-check the CLI and GUI locally:
 
 ```bash
@@ -58,4 +65,3 @@ git push origin vX.Y.Z
 - merged PDF is created
 - TOC shows final page numbers
 - GUI starts without a console window
-

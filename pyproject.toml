@@ -1,5 +1,5 @@
 [project]
-name = "pdf-merger"
+name = "pdf-bundle-builder"
 version = "0.1.0"
 description = "Offline PDF bundle builder"
 readme = "README.md"
