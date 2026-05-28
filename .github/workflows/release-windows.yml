@@ -1,0 +1,66 @@
+name: release-windows
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install dependencies (incl. dev)
+        run: uv sync --extra dev
+
+      - name: Build CLI exe (PyInstaller)
+        run: >
+          uv run pyinstaller
+          --noconfirm
+          --clean
+          --onefile
+          --name pdf-bundle-builder
+          --paths src
+          src/pdf_merger/cli.py
+
+      - name: Build GUI exe (PyInstaller)
+        run: >
+          uv run pyinstaller
+          --noconfirm
+          --clean
+          --onefile
+          --windowed
+          --name pdf-bundle-builder-gui
+          --paths src
+          src/pdf_merger/app.py
+
+      - name: Package artifacts
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist-release | Out-Null
+          Copy-Item -Force dist/pdf-bundle-builder.exe dist-release/
+          Copy-Item -Force dist/pdf-bundle-builder-gui.exe dist-release/
+          Copy-Item -Force README.md dist-release/
+          Copy-Item -Force LICENSE dist-release/
+          Compress-Archive -Force -Path dist-release/* -DestinationPath pdf-bundle-builder-windows.zip
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pdf-bundle-builder-windows
+          path: pdf-bundle-builder-windows.zip
+
+      - name: Create GitHub Release (attach zip)
+        uses: softprops/action-gh-release@v2
+        with:
+          files: pdf-bundle-builder-windows.zip
+

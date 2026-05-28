@@ -1,0 +1,38 @@
+[project]
+name = "pdf-merger"
+version = "0.1.0"
+description = "Offline PDF bundle builder"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "customtkinter>=5.2.2",
+    "PyPDF2",
+    "reportlab",
+]
+
+[project.scripts]
+pdf-bundle-builder = "pdf_merger.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pyinstaller>=6.0",
+    "pytest>=8.0",
+    "ruff>=0.5.0",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
