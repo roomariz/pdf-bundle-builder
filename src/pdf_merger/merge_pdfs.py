@@ -6,6 +6,7 @@ from typing import Mapping
 
 from PyPDF2 import PdfMerger
 from PyPDF2 import PdfReader
+from io import BytesIO
 
 from pdf_merger.design import create_section_pdf, create_toc_pdf
 
@@ -173,7 +174,7 @@ def merge_pdfs(
                 section_start_pages=section_start_pages,
             )
 
-        merger.append(toc_bytes_pass2)
+        merger.append(BytesIO(toc_bytes_pass2))
         current_page += toc_pages_pass2
 
     for index, pdf_file in enumerate(pdf_files, start=1):

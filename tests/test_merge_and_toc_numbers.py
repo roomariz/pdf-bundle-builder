@@ -3,15 +3,14 @@ from __future__ import annotations
 from pathlib import Path
 
 import pytest
-from PyPDF2 import PdfReader, PdfWriter
-from reportlab.lib.pagesizes import A4
-from reportlab.pdfgen import canvas
+try:
+    from PyPDF2 import PdfReader, PdfWriter
+    from reportlab.lib.pagesizes import A4
+    from reportlab.pdfgen import canvas
+except ModuleNotFoundError:  # pragma: no cover
+    pytest.skip("Project dependencies not installed (PyPDF2/ReportLab).", allow_module_level=True)
 
-from pdf_merger.merge_pdfs import (
-    _calculate_section_start_pages,
-    _get_pdf_page_count,
-    merge_pdfs,
-)
+from pdf_merger.merge_pdfs import _calculate_section_start_pages, _get_pdf_page_count, merge_pdfs
 
 
 def _make_pdf(path: Path, pages: int) -> None:

@@ -16,3 +16,6 @@ wheels/
 input/
 output/
 *.pdf
+
+# Safe demo PDFs (tracked)
+!sample-input/*.pdf
